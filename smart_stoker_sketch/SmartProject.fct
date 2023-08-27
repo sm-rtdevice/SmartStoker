@@ -1,0 +1,10 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"main.c" LINE:187
+GetTemper DSTACK_USAGE:7 DSTACK_LEVEL:7 FILE:"src\Temperature.h" LINE:23
+ds18b20_temperature DSTACK_USAGE:3 DSTACK_LEVEL:10 FILE:"C:\cvavreval\lib\ds18b20.lib" LINE:48
+ds18b20_read_spd DSTACK_USAGE:5 DSTACK_LEVEL:15 FILE:"C:\cvavreval\lib\ds18b20.lib" LINE:34
+ds18b20_select DSTACK_USAGE:3 DSTACK_LEVEL:18 FILE:"C:\cvavreval\lib\ds18b20.lib" LINE:18
+timer1_timer DSTACK_USAGE:12 DSTACK_LEVEL:30 FILE:"main.c" LINE:51
+LCD_Show DSTACK_USAGE:0 DSTACK_LEVEL:30 FILE:"src\LCD.h" LINE:7
+sprintf DSTACK_USAGE:14 DSTACK_LEVEL:44 FILE:"C:\cvavreval\lib\stdio.lib" LINE:1410
+_print DSTACK_USAGE:20 DSTACK_LEVEL:64 FILE:"C:\cvavreval\lib\stdio.lib" LINE:503
+strlen DSTACK_USAGE:2 DSTACK_LEVEL:66 FILE:"C:\cvavreval\lib\string.lib" LINE:1707

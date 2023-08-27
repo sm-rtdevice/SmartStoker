@@ -1,0 +1,4 @@
+VERSION:3 SOURCE_TIMESTAMP:4E3CB479
+NODE:I LEVEL:0 LINE:33 "E:\Arduino controllers\Smart_Stoker_Project_Develop_2018-06-16\Smart_Stoker_project_2018-06-13\Smart кочегар v 2.4a\Контроллер AVR ATmega32\Прошивка (Cvavr)\stdafx.h"
+NODE:F LEVEL:0 LINE:51 "timer1_timer(void)"
+NODE:F LEVEL:0 LINE:187 "main(void)"

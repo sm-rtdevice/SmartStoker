@@ -1,0 +1,138 @@
+;/* please read copyright-notice at EOF */
+;
+;//#include <inttypes.h>
+;typedef unsigned char uint8_t;  // 8
+;typedef unsigned char uint16_t; // 16 !!!!!!
+;
+;#define CRC8INIT	0x00
+;#define CRC8POLY	0x18              //0X18 = X^8+X^5+X^4+X^0
+;
+;
+;
+; uint8_t crc8 ( uint8_t *data_in, uint16_t number_of_bytes_to_read )
+; 0001 000D  {
+
+	.CSEG
+;PCODE: $00000000 VOL: 0
+;PCODE: $00000001 VOL: 0
+; 0001 000E    uint8_t	 crc;
+; 0001 000F    uint16_t loop_count;
+; 0001 0010    uint8_t  bit_counter;
+; 0001 0011    uint8_t  data;
+; 0001 0012    uint8_t  feedback_bit;
+; 0001 0013 
+; 0001 0014    crc = CRC8INIT;
+;PCODE: $00000002 VOL: 0
+;	*data_in -> Y+6
+;	number_of_bytes_to_read -> Y+5
+;	crc -> R16
+;	loop_count -> R17
+;	bit_counter -> R18
+;	data -> R19
+;	feedback_bit -> R20
+;PCODE: $00000003 VOL: 0
+;PCODE: $00000004 VOL: 0
+; 0001 0015 
+; 0001 0016    for (loop_count = 0; loop_count != number_of_bytes_to_read; loop_count++)
+;PCODE: $00000005 VOL: 0
+;PCODE: $00000006 VOL: 0
+;PCODE: $00000007 VOL: 0
+;PCODE: $00000008 VOL: 0
+;PCODE: $00000009 VOL: 0
+;PCODE: $0000000A VOL: 0
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;PCODE: $0000000D VOL: 0
+; 0001 0017     { data = data_in[loop_count];
+;PCODE: $0000000E VOL: 0
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+; 0001 0018 
+; 0001 0019       bit_counter = 8;
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+; 0001 001A       do
+;PCODE: $00000013 VOL: 0
+; 0001 001B        { feedback_bit = (crc ^ data) & 0x01;
+;PCODE: $00000014 VOL: 0
+;PCODE: $00000015 VOL: 0
+;PCODE: $00000016 VOL: 0
+;PCODE: $00000017 VOL: 0
+; 0001 001C          if ( feedback_bit == 0x01 )
+;PCODE: $00000018 VOL: 0
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+; 0001 001D             crc = crc ^ CRC8POLY;
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+;PCODE: $0000001D VOL: 0
+; 0001 001E 
+; 0001 001F          crc = (crc >> 1) & 0x7F;
+;PCODE: $0000001E VOL: 0
+;PCODE: $0000001F VOL: 0
+;PCODE: $00000020 VOL: 0
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+;PCODE: $00000023 VOL: 0
+; 0001 0020          if ( feedback_bit == 0x01 )
+;PCODE: $00000024 VOL: 0
+;PCODE: $00000025 VOL: 0
+;PCODE: $00000026 VOL: 0
+; 0001 0021             crc = crc | 0x80;
+;PCODE: $00000027 VOL: 0
+;PCODE: $00000028 VOL: 0
+; 0001 0022 
+; 0001 0023          data = data >> 1;
+;PCODE: $00000029 VOL: 0
+;PCODE: $0000002A VOL: 0
+;PCODE: $0000002B VOL: 0
+;PCODE: $0000002C VOL: 0
+;PCODE: $0000002D VOL: 0
+; 0001 0024          bit_counter--;
+;PCODE: $0000002E VOL: 0
+;PCODE: $0000002F VOL: 0
+; 0001 0025        }
+; 0001 0026       while (bit_counter > 0);
+;PCODE: $00000030 VOL: 0
+;PCODE: $00000031 VOL: 0
+;PCODE: $00000032 VOL: 0
+;PCODE: $00000033 VOL: 0
+;PCODE: $00000034 VOL: 0
+;PCODE: $00000035 VOL: 0
+; 0001 0027     }
+;PCODE: $00000036 VOL: 0
+;PCODE: $00000037 VOL: 0
+;PCODE: $00000038 VOL: 0
+;PCODE: $00000039 VOL: 0
+;PCODE: $0000003A VOL: 0
+; 0001 0028    return crc;
+;PCODE: $0000003B VOL: 0
+;PCODE: $0000003C VOL: 0
+;PCODE: $0000003D VOL: 0
+;PCODE: $0000003E VOL: 0
+; 0001 0029  }
+;PCODE: $0000003F VOL: 0
+;
+;
+;
+;/*
+;This code is from Colin O'Flynn - Copyright (c) 2002
+;only minor changes by M.Thomas 9/2004
+;
+;Permission is hereby granted, free of charge, to any person obtaining a copy of
+;this software and associated documentation files (the "Software"), to deal in
+;the Software without restriction, including without limitation the rights to
+;use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+;the Software, and to permit persons to whom the Software is furnished to do so,
+;subject to the following conditions:
+;
+;The above copyright notice and this permission notice shall be included in all
+;copies or substantial portions of the Software.
+;
+;THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+;FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+;COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+;IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+;CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+;*/

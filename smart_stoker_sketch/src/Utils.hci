@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:4CCF05AD
+NODE:M LEVEL:0 LINE:2 "_UTILS_INCLUDED_"
+NODE:F LEVEL:0 LINE:18 "sncpy(unsigned char * dest,eeprom unsigned char * src)"
+NODE:F LEVEL:0 LINE:34 "bcd(unsigned char data)"
+NODE:F LEVEL:0 LINE:44 "bin(unsigned char dec)"

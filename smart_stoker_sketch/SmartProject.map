@@ -1,0 +1,63 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+__ds1820_scratch_pad                                              0x0293       9
+__ds18b20_scratch_pad                                             0x029C       9
+ds1820_devices                                                    0x02A5       1
+Temperature                                                       0x02A6       6
+TempDec                                                           0x02AC       6
+Sign                                                              0x02B2       3
+tRadiator                                                         0x02B5       1
+tCaldron                                                          0x02B6       1
+tOutSide                                                          0x02B7       1
+ds1820_sn                                                         0x02B8      27
+MaxT1                                                             0x02D3       1
+OnBlock                                                           0x02D4       1
+TickCount                                                         0x02D5       2
+Errcount                                                          0x02D7       1
+k1                                                                0x02D8       1
+i                                                                 0x02D9       1
+BufCRC                                                            0x02DA      18
+lcd_screen                                                        0x02EC       1
+hour23                                                            0x02ED       1
+minute23                                                          0x02EE       1
+sec23                                                             0x02EF       1
+day                                                               0x02F0       1
+wday                                                              0x02F1       1
+month                                                             0x02F2       1
+year                                                              0x02F3       1
+t1                                                                0x02F4       1
+t2                                                                0x02F5       1
+rx_buffer                                                         0x02F6      32
+rx_wr_index                                                       0x0316       1
+rx_rd_index                                                       0x0317       1
+rx_counter                                                        0x0318       1
+tx_buffer                                                         0x0319       8
+tx_wr_index                                                       0x0321       1
+tx_rd_index                                                       0x0322       1
+tx_counter                                                        0x0323       1
+lcd_buffer                                                        0x0324      16
+_base_y                                                           0x0334       4
+_lcd_x                                                            0x0338       1
+_lcd_y                                                            0x0339       1
+_lcd_maxx                                                         0x033A       1
+_seed                                                             0x033B       4
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+ds1820_rom_codes                                                  0x0000      27
+MinT                                                              0x001B       1
+MaxT                                                              0x001C       1
+MinTCaldron                                                       0x001D       1
+StokerMode                                                        0x001E       1
+WorkTime                                                          0x001F       1
+IdleTime                                                          0x0020       1
+nStart                                                            0x0021       1
+AutoRestoration                                                   0x0022       1
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+MeasureTemp                                                       R2.0      1bit
+rx_buffer_overflow                                                R2.1      1bit
