@@ -949,8 +949,8 @@ Line2=72
 Blocks=2
 [HeadersList]
 Files=2
-F1=E:\Smart_Stoker_Project_Develop_2018-06-16\Smart_Stoker_project_2018-06-13\Smart кочегар v 2.4a\Контроллер AVR ATmega32\Прошивка (Cvavr)\main.c
-F2=E:\Arduino controllers\Smart_Stoker_Project_Develop_2018-06-16\Smart_Stoker_project_2018-06-13\Smart кочегар v 2.4a\Контроллер AVR ATmega32\Прошивка (Cvavr)\main.c
+F1=main.c
+F2=main.c
 [Bookmarks33]
 TimeStamp=1200337831
 Row=1
